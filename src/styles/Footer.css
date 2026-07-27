@@ -1,0 +1,41 @@
+.footer {
+  background: #050505;
+  border-top: 1px solid #222;
+  padding: 60px 20px;
+  color: white;
+}
+
+.footer-container {
+  width: min(1100px, 100%);
+  margin: auto;
+  text-align: center;
+}
+
+.footer h3 {
+  color: #f5c400;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  color: #bfbfbf;
+  margin-bottom: 20px;
+}
+
+.footer a {
+  color: #f5c400;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.footer span {
+  display: block;
+  color: #7d7d7d;
+  font-size: 14px;
+}

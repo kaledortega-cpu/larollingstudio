@@ -1,0 +1,116 @@
+.hero{
+    min-height:100vh;
+    background: transparent;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    padding:40px;
+    position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(245,196,0,.06), transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.hero-content{
+    position:relative;
+}
+
+.logo{
+    width:260px;
+    margin-bottom:25px;
+    position:relative;
+    z-index:2;
+    animation: floatLogo 5s ease-in-out infinite;
+}
+
+.logo-glow{
+position:absolute;
+    width:340px;
+    height:340px;
+    background: radial-gradient(circle,#f5c400 0%,transparent 70%);
+    opacity:.25;
+    left:50%;
+    top:-20px;
+    transform:translateX(-50%);
+    filter:blur(80px);
+}
+
+.hero h1{
+    margin-top:20px;
+    font-size:56px;
+    color:#f5c400;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:18px;
+}
+
+.services{
+    display:block;
+    color:#bfbfbf;
+    margin-bottom:45px;
+}
+
+.hero button{
+    background:#f5c400;
+    color:black;
+    border:none;
+    padding:16px 34px;
+    border-radius:12px;
+    font-weight:bold;
+    font-size:18px;
+    transition:.3s;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(245,196,0,.18);
+    position: relative;
+    overflow: hidden;
+}
+
+button::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition:.6s;
+}
+
+button:hover::before{
+    left:140%;
+}
+
+@keyframes floatLogo {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
