@@ -1,5 +1,6 @@
 import "../styles/Hero.css";
 import logo from "../assets/images/logo.png";
+import StatsBanner from "./StatsBanner";
 
 function Hero() {
   return (
@@ -24,6 +25,8 @@ function Hero() {
         >
           RESERVAR SESIÓN
         </button>
+
+        <StatsBanner />
       </div>
     </section>
   );
