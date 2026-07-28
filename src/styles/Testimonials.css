@@ -5,7 +5,7 @@
 }
 
 .testimonials-container {
-  width: min(1100px, 100%);
+  width: min(1180px, 100%);
   margin: 0 auto;
 }
 
@@ -18,17 +18,24 @@
 }
 
 .section-label {
+  margin-bottom: 12px;
   color: #f5c400;
   font-size: 14px;
-  letter-spacing: 3px;
   font-weight: 700;
-  margin-bottom: 12px;
+  letter-spacing: 3px;
+}
+
+.video-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .video-wrapper {
   position: relative;
-  width: 100%;
-  padding-top: 56.25%;
+  width: min(1000px, calc(100% - 130px));
+  padding-top: min(56.25%, 562px);
   overflow: hidden;
   background: #111;
   border: 1px solid rgba(245, 196, 0, 0.35);
@@ -42,6 +49,207 @@
   width: 100%;
   height: 100%;
   border: 0;
+  animation: videoFade 0.45s ease;
+}
+
+.main-video-arrow,
+.thumbnail-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+  background: rgba(20, 20, 20, 0.82);
+  border: 1px solid rgba(245, 196, 0, 0.35);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.main-video-arrow {
+  position: absolute;
+  z-index: 3;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.main-video-arrow-left {
+  left: 0;
+}
+
+.main-video-arrow-right {
+  right: 0;
+}
+
+.main-video-arrow:hover,
+.thumbnail-arrow:hover {
+  color: #111;
+  background: #f5c400;
+  border-color: #f5c400;
+  transform: scale(1.08);
+}
+
+.thumbnail-carousel {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 42px;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.thumbnail-arrow {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 29px;
+}
+
+.video-thumbnails {
+  display: flex;
+  gap: 16px;
+  padding: 5px 2px 12px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  scroll-snap-type: x proximity;
+}
+
+.video-thumbnails::-webkit-scrollbar {
+  display: none;
+}
+
+.video-thumbnail {
+  position: relative;
+  flex: 0 0 210px;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  overflow: hidden;
+  background: #111;
+  border: 2px solid transparent;
+  border-radius: 13px;
+  cursor: pointer;
+  opacity: 0.55;
+  scroll-snap-align: center;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.video-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.video-thumbnail:hover {
+  opacity: 0.9;
+  transform: translateY(-4px);
+}
+
+.video-thumbnail:hover img {
+  transform: scale(1.06);
+}
+
+.video-thumbnail.active {
+  border-color: #f5c400;
+  box-shadow: 0 8px 28px rgba(245, 196, 0, 0.2);
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.15);
+  transition: background 0.25s ease;
+}
+
+.video-thumbnail:hover .thumbnail-overlay,
+.video-thumbnail.active .thumbnail-overlay {
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.thumbnail-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding-left: 3px;
+  color: #111;
+  background: #f5c400;
+  border-radius: 50%;
+  font-size: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transform: scale(0.75);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.video-thumbnail:hover .thumbnail-play,
+.video-thumbnail.active .thumbnail-play {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.thumbnail-number {
+  position: absolute;
+  right: 9px;
+  bottom: 7px;
+  color: white;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px black;
+}
+
+.video-counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+  color: #bdbdbd;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 21px;
+  letter-spacing: 2px;
+}
+
+.video-counter span:first-child {
+  color: #f5c400;
+}
+
+.counter-line {
+  width: 45px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+@keyframes videoFade {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @media (max-width: 800px) {
@@ -55,6 +263,72 @@
   }
 
   .video-wrapper {
+    width: 100%;
+    padding-top: 56.25%;
     border-radius: 16px;
+  }
+
+  .main-video-arrow {
+    top: 50%;
+    width: 42px;
+    height: 42px;
+    background: rgba(10, 10, 10, 0.78);
+    font-size: 31px;
+    transform: translateY(-50%);
+  }
+
+  .main-video-arrow:hover {
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  .main-video-arrow-left {
+    left: 10px;
+  }
+
+  .main-video-arrow-right {
+    right: 10px;
+  }
+
+  .thumbnail-carousel {
+    grid-template-columns: 1fr;
+    margin-top: 22px;
+  }
+
+  .thumbnail-arrow {
+    display: none;
+  }
+
+  .video-thumbnails {
+    margin-right: -20px;
+    margin-left: -20px;
+    padding: 5px 20px 12px;
+  }
+
+  .video-thumbnail {
+    flex-basis: 165px;
+  }
+}
+
+@media (max-width: 430px) {
+  .testimonials-section {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .video-thumbnails {
+    margin-right: -16px;
+    margin-left: -16px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .video-thumbnail {
+    flex-basis: 145px;
+  }
+
+  .main-video-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 28px;
   }
 }
