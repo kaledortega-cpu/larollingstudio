@@ -17,7 +17,7 @@ function AnimatedNumber({ target }) {
 
         hasAnimated.current = true;
 
-        const duration = 800;
+        const duration = 2200;
         const startTime = performance.now();
 
         const animate = (currentTime) => {
@@ -27,7 +27,7 @@ function AnimatedNumber({ target }) {
           );
 
           const easedProgress = 1 - Math.pow(1 - progress, 3);
-          const currentValue = Math.floor(target * easedProgress);
+          const currentValue = Math.round(target * easedProgress);
 
           setValue(currentValue);
 
