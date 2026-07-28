@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Sora:wght@400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -11,14 +11,31 @@ html {
 }
 
 body {
+  margin: 0;
   font-family: "Sora", sans-serif;
   color: white;
   overflow-x: hidden;
 
   background:
-    radial-gradient(circle at top, rgba(245,196,0,.08), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(245,196,0,.05), transparent 35%),
+    radial-gradient(circle at top, rgba(245, 196, 0, 0.08), transparent 30%),
+    radial-gradient(
+      circle at bottom right,
+      rgba(245, 196, 0, 0.05),
+      transparent 35%
+    ),
     #090909;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: 1.5px;
+  font-weight: 400;
+}
+
+h1 {
+  letter-spacing: 3px;
 }
 
 button,
@@ -34,36 +51,32 @@ section {
 section::before {
   content: "";
   position: absolute;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(245,196,0,.04), transparent 70%);
   top: -250px;
   right: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(245, 196, 0, 0.04),
+    transparent 70%
+  );
   pointer-events: none;
 }
 
 section:nth-child(even)::before {
-  left: -200px;
   right: auto;
-}
-
-body {
-  margin: 0;
-  background: #090909;
+  left: -200px;
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-
+  z-index: -1;
   background-image: url("/images/background-pattern.png");
   background-repeat: repeat;
   background-size: 1555px;
   background-position: center;
-
-  opacity: 0.08;   /* ← AQUÍ */
-
+  opacity: 0.08;
   pointer-events: none;
-  z-index: -1;
 }
