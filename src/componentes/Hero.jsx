@@ -5,16 +5,13 @@ function Hero() {
   return (
     <section className="hero" id="inicio">
       <div className="hero-content">
-
         <div className="logo-glow"></div>
 
-        <img src={logo} alt="La Rolling Studio" className="logo" />
+        <img src={logo} alt="La Rolling Studio" className="hero-logo" />
 
         <h1>LA ROLLING STUDIO</h1>
 
-        <p>
-          Tu música merece sonar profesional.
-        </p>
+        <p>Tu música merece sonar profesional.</p>
 
         <span className="services">
           Grabación • Mezcla • Mastering
@@ -27,7 +24,6 @@ function Hero() {
         >
           RESERVAR SESIÓN
         </button>
-
       </div>
     </section>
   );
