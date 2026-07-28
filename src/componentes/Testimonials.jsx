@@ -1,34 +1,21 @@
 import "../styles/Testimonials.css";
 
 function Testimonials() {
-  const opiniones = [
-    {
-      nombre: "Krow",
-      texto: "El tema quedó mucho más profesional de lo que esperaba. Muy buen trato y muy buen sonido."
-    },
-    {
-      nombre: "Chepive",
-      texto: "Me ayudaron durante todo el proceso y consiguieron exactamente el sonido que buscaba."
-    },
-    {
-      nombre: "Dlesson",
-      texto: "Buen ambiente, rapidez y una mezcla muy limpia. Volveré para los próximos temas."
-    }
-  ];
-
   return (
-    <section className="testimonials-section" id="opiniones">
-      <p className="section-label">OPINIONES</p>
-      <h2>Lo que dicen nuestros artistas</h2>
+    <section className="testimonials-section" id="videoclip">
+      <div className="testimonials-container">
+        <p className="section-label">MIRA CÓMO TRABAJAMOS</p>
 
-      <div className="testimonials-grid">
-        {opiniones.map((opinion, index) => (
-          <article className="testimonial-card" key={index}>
-            <div className="stars">★★★★★</div>
-            <p>“{opinion.texto}”</p>
-            <h3>{opinion.nombre}</h3>
-          </article>
-        ))}
+        <h2>Sonido, imagen y energía desde La Rolling Studio</h2>
+
+        <div className="video-wrapper">
+          <iframe
+            src="https://www.youtube.com/embed/h0Xqh4LoZkU"
+            title="Videoclip de La Rolling Studio"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
+        </div>
       </div>
     </section>
   );
