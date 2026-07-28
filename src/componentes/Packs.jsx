@@ -8,9 +8,33 @@ function Packs() {
 
         <h2>Elige el plan que mejor encaje contigo</h2>
 
+        <div className="packs-explanation">
+          <div className="packs-explanation-item">
+            <span className="payment-badge payment-badge-single">
+              PAGO ÚNICO
+            </span>
+
+            <p>Para sesiones y servicios puntuales.</p>
+          </div>
+
+          <div className="packs-explanation-item">
+            <span className="payment-badge payment-badge-monthly">
+              PLAN MENSUAL
+            </span>
+
+            <p>Para artistas que trabajan de forma continua.</p>
+          </div>
+        </div>
+
         <div className="packs-grid">
           <article className="pack-card">
-            <span className="pack-label">SESIÓN COMPLETA</span>
+            <div className="pack-card-header">
+              <span className="pack-label">SESIÓN COMPLETA</span>
+
+              <span className="payment-badge payment-badge-single">
+                PAGO ÚNICO
+              </span>
+            </div>
 
             <h3>Grabación Completa</h3>
 
@@ -33,12 +57,18 @@ function Packs() {
           </article>
 
           <article className="pack-card">
-            <span className="pack-label">STANDARD</span>
+            <div className="pack-card-header">
+              <span className="pack-label">STANDARD</span>
+
+              <span className="payment-badge payment-badge-monthly">
+                PLAN MENSUAL
+              </span>
+            </div>
 
             <h3>Pack Standard</h3>
 
             <p className="pack-price">
-              150€ <span>/ mes</span>
+              150€ <span>al mes</span>
             </p>
 
             <ul>
@@ -55,14 +85,20 @@ function Packs() {
               target="_blank"
               rel="noreferrer"
             >
-              Reservar pack
+              Reservar plan
             </a>
           </article>
 
           <article className="pack-card featured">
             <span className="recommended">RECOMENDADO</span>
 
-            <span className="pack-label">AUDIOVISUAL</span>
+            <div className="pack-card-header">
+              <span className="pack-label">AUDIOVISUAL</span>
+
+              <span className="payment-badge payment-badge-single">
+                PAGO ÚNICO
+              </span>
+            </div>
 
             <h3>Pack Audiovisual</h3>
 
@@ -87,12 +123,18 @@ function Packs() {
           </article>
 
           <article className="pack-card">
-            <span className="pack-label">PRO</span>
+            <div className="pack-card-header">
+              <span className="pack-label">PRO</span>
+
+              <span className="payment-badge payment-badge-monthly">
+                PLAN MENSUAL
+              </span>
+            </div>
 
             <h3>Pack Pro</h3>
 
             <p className="pack-price">
-              300€ <span>/ mes</span>
+              300€ <span>al mes</span>
             </p>
 
             <ul>
@@ -109,7 +151,7 @@ function Packs() {
               target="_blank"
               rel="noreferrer"
             >
-              Reservar pack
+              Reservar plan
             </a>
           </article>
         </div>
