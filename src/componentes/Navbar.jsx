@@ -3,6 +3,7 @@ import "../styles/Navbar.css";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,18 +17,55 @@ function Navbar() {
     };
   }, []);
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className={scrolled ? "navbar scrolled" : "navbar"}>
-      <a href="#inicio" className="logo">
+      <a href="#inicio" className="logo" onClick={closeMenu}>
         LA ROLLING
       </a>
 
-      <div className="menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#packs">Packs</a>
-        <a href="#galeria">Galería</a>
-        <a href="#contacto">Contacto</a>
+      <button
+        className="menu-button"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Abrir menú"
+        aria-expanded={menuOpen}
+      >
+        <span className={menuOpen ? "menu-icon open" : "menu-icon"}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        <span>{menuOpen ? "Cerrar" : "Menú"}</span>
+      </button>
+
+      <div className={menuOpen ? "menu open" : "menu"}>
+        <a href="#inicio" onClick={closeMenu}>
+          Inicio
+        </a>
+
+        <a href="#servicios" onClick={closeMenu}>
+          Servicios
+        </a>
+
+        <a href="#packs" onClick={closeMenu}>
+          Packs
+        </a>
+
+        <a href="#galeria" onClick={closeMenu}>
+          Galería
+        </a>
+
+        <a href="#videoclip" onClick={closeMenu}>
+          Videoclip
+        </a>
+
+        <a href="#contacto" onClick={closeMenu}>
+          Contacto
+        </a>
       </div>
     </nav>
   );
