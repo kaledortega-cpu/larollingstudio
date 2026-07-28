@@ -1,19 +1,18 @@
 .hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 120px 30px 70px;
-  position: relative;
-  background: transparent;
-  color: white;
-  text-align: center;
+  align-items: flex-start;
+  padding: 140px 30px 80px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .hero::after {
   content: "";
   position: absolute;
-  top: 48%;
+  top: 42%;
   left: 50%;
   width: 700px;
   height: 700px;
@@ -28,15 +27,17 @@
 
 .hero-content {
   position: relative;
-  width: min(900px, 100%);
   z-index: 1;
+  width: min(900px, 100%);
+  padding-bottom: 20px;
+  text-align: center;
 }
 
 .hero-logo {
   position: relative;
   z-index: 2;
   display: block;
-  width: min(500px, 80px);
+  width: min(500px, 80vw);
   max-height: 340px;
   object-fit: contain;
   margin: 0 auto 12px;
@@ -71,7 +72,7 @@
 }
 
 .hero p {
-  margin-bottom: 18px;
+  margin: 0 0 18px;
   font-size: clamp(19px, 3vw, 25px);
 }
 
@@ -94,7 +95,9 @@
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
 }
 
 .hero button:hover {
@@ -115,7 +118,7 @@
     rgba(255, 255, 255, 0.35),
     transparent
   );
-  transition: 0.6s;
+  transition: left 0.6s ease;
 }
 
 .hero button:hover::before {
@@ -161,8 +164,7 @@
 
   .hero p {
     max-width: 330px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto 18px;
     line-height: 1.35;
   }
 

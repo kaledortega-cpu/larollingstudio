@@ -3,12 +3,24 @@ import logo from "../assets/images/logo.png";
 import StatsBanner from "./StatsBanner";
 
 function Hero() {
+  const abrirInstagram = () => {
+    window.open(
+      "https://instagram.com/Krow_fs",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <section className="hero" id="inicio">
       <div className="hero-content">
         <div className="logo-glow"></div>
 
-        <img src={logo} alt="La Rolling Studio" className="hero-logo" />
+        <img
+          src={logo}
+          alt="Logo de La Rolling Studio"
+          className="hero-logo"
+        />
 
         <h1>LA ROLLING STUDIO</h1>
 
@@ -18,11 +30,7 @@ function Hero() {
           Grabación • Mezcla • Mastering
         </span>
 
-        <button
-          onClick={() =>
-            window.open("https://instagram.com/Krow_fs", "_blank")
-          }
-        >
+        <button type="button" onClick={abrirInstagram}>
           RESERVAR SESIÓN
         </button>
 
